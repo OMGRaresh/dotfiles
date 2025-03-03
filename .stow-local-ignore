@@ -1,0 +1,9 @@
+/.devbox
+/.gitignore
+/devbox.*
+/gcloud
+/install.sh
+/.git
+/sync.sh
+/README.md
+/.local

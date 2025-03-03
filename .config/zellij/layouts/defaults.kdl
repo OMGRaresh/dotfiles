@@ -1,0 +1,80 @@
+layout {
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+    tab name="it-dev"  focus=true  {
+        pane name="k9s" command="k9s" size="65%" borderless=true  {
+            args "-c pod" "--context" "it-dev" "-A"
+        }
+        pane split_direction="vertical"  {
+            pane name="k9s" split_direction="vertical" command="k9s" borderless=true  {
+                args "-c ks" "--context" "it-dev" "-A" "--headless" "--crumbsless"
+            }
+            pane name="zsh" split_direction="vertical"  {
+            }
+        }
+    }
+    tab name="it-prod"  {
+        pane name="k9s" command="k9s" size="65%" borderless=true  {
+            args "-c pod" "--context" "it-prod" "-A"
+        }
+        pane split_direction="vertical"  {
+            pane name="k9s" split_direction="vertical" command="k9s" borderless=true  {
+                args "-c ks" "--context" "it-prod" "-A" "--headless" "--crumbsless"
+            }
+            pane name="zsh" split_direction="vertical"  {
+            }
+        }
+    }
+    tab name="stage"  {
+        pane name="k9s" command="k9s" size="65%" borderless=true  {
+            args "-c pod" "--context" "stage" "-A"
+        }
+        pane split_direction="vertical" {
+            pane name="k9s" split_direction="vertical" command="k9s" borderless=true  {
+                args "-c ks" "--context" "stage" "-A" "--headless" "--crumbsless"
+            }
+            pane name="zsh" split_direction="vertical" {
+            }
+        }
+    }
+    tab name="uat"  {
+        pane name="k9s" command="k9s" size="65%" borderless=true  {
+            args "-c pod" "--context" "uat" "-A"
+        }
+        pane split_direction="vertical" {
+            pane name="k9s" split_direction="vertical" command="k9s" borderless=true  {
+                args "-c ks" "--context" "uat" "-A" "--headless" "--crumbsless"
+            }
+            pane name="zsh" split_direction="vertical" {
+            }
+        }
+    }
+    tab name="prod"  {
+        pane name="k9s" command="k9s" size="65%" borderless=true  {
+            args "-c pod" "--context" "prod" "-A"
+        }
+        pane split_direction="vertical" {
+            pane name="k9s" split_direction="vertical" command="k9s" borderless=true  {
+                args "-c ks" "--context" "prod" "-A" "--headless" "--crumbsless"
+            }
+            pane name="zsh" split_direction="vertical" {
+            }
+        }
+    }
+    tab name="zsh"  {
+        pane name="zsh" size="65%"  {
+        }
+        pane split_direction="vertical" {
+            pane name="zsh" split_direction="vertical"  {
+            }
+        }
+    }    
+}
