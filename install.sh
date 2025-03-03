@@ -14,5 +14,8 @@ if ! which devbox &> /dev/null; then
     echo "devbox already installed" 
 fi
 
+# Copy global devbox config
+cp $HOME/.dotfiles/.local/share/devbox/global/default/devbox.json $HOME/.local/share/devbox/global/default
+
 # Source all dotfiles
-stow $HOME/.dotfiles
+devbox run stow
