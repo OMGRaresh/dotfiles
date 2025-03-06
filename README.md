@@ -4,6 +4,7 @@
 
 ````
 git clone https://github.com/OMGRaresh/dotfiles.git $HOME/.dotfiles
+chmod +x install.sh
 install.sh
 Restart zshell
 ```

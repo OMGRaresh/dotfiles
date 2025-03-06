@@ -14,6 +14,14 @@ if ! which devbox &> /dev/null; then
     echo "devbox already installed" 
 fi
 
+# Install starship
+if ! which starship &> /dev/null; then
+    echo "Installing Starship"
+    curl -sS https://starship.rs/install.sh | sh
+  else
+    echo "Starship already installed" 
+fi
+
 # Copy global devbox config
 cp $HOME/.dotfiles/.local/share/devbox/global/default/devbox.json $HOME/.local/share/devbox/global/default
 

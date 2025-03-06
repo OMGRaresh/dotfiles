@@ -1,8 +1,18 @@
-if [[ -f $HOME/.oh-my-zsh ]]; then
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi
-
+# Delete an old recorded event if a new event is a duplicate.
 setopt HIST_IGNORE_ALL_DUPS
+
+# Write to the history file immediately, not when the shell exits.
+setopt INC_APPEND_HISTORY
+
+# Share history between all sessions.
+setopt SHARE_HISTORY
+
+# include timestamp
+setopt EXTENDED_HISTORY
+
+# History Config
+SAVEHIST=9000
+HISTSIZE=9999
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -107,12 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Devbox
-if ! which devbox &> /dev/null; then
-    curl -fsSL https://get.jetify.com/devbox | bash
-fi
-
-DEVBOX_NO_PROMPT=true
+DEVBOX_NO_PROMPT=false
 eval "$(devbox global shellenv --init-hook)"
+
+# Starship
+eval "$(starship init zsh)"
 
 # Completions
 autoload -Uz compinit
@@ -125,10 +134,10 @@ source <(flux completion zsh)
 alias k=kubectl
 alias f=flux
 
-PROMPT='$(kube_ps1)'$PROMPT
-KUBE_PS1_SYMBOL_ENABLE=false
+#PROMPT='$(kube_ps1)'$PROMPT
+#KUBE_PS1_SYMBOL_ENABLE=false
 
 export OS_CLOUD=openstack
-export PATH="$HOME/go/bin:$PATH"
+#export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
