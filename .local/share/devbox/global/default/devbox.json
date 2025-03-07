@@ -3,15 +3,23 @@
   "packages": [
     "bat@latest",
     "stow@latest",
-    "zellij@latest"
+    "zellij@latest",
+    "gh@latest",
+    "kind@latest",
+    "jq@latest",
+    "yq-go@latest",
+    "kubectl@latest",
+    "flux@latest",
+    "kubectx@latest",
+    "k9s@latest",
+    "tree@latest",
+    "kubecolor@latest"
   ],
   "shell": {
-    "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
-    ],
+    "init_hook": [],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
+      "zellij": [
+        "zellij --layout $HOME/.config/zellij/layouts/defaults.kdl"
       ]
     }
   }

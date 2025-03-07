@@ -133,6 +133,10 @@ source <(flux completion zsh)
 
 alias k=kubectl
 alias f=flux
+alias cat='bat --paging never --style plain'
+
+compdef kubecolor=kubectl
+alias kubectl='kubecolor'
 
 #PROMPT='$(kube_ps1)'$PROMPT
 #KUBE_PS1_SYMBOL_ENABLE=false
