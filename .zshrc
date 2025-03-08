@@ -135,6 +135,8 @@ alias k=kubectl
 alias f=flux
 alias cat='bat --paging never --style plain'
 
+alias ls='ls -G'
+
 # compdef kubecolor=kubectl
 alias kubectl='kubecolor'
 
