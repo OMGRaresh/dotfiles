@@ -2,7 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
   "packages": [
     "bat@latest",
-    "stow@latest",
     "zellij@latest",
     "gh@latest",
     "kind@latest",
@@ -13,7 +12,8 @@
     "kubectx@latest",
     "k9s@latest",
     "tree@latest",
-    "kubecolor@latest"
+    "kubecolor@latest",
+    "tldr@latest"
   ],
   "shell": {
     "init_hook": [],
