@@ -13,7 +13,8 @@
     "k9s@latest",
     "tree@latest",
     "kubecolor@latest",
-    "tldr@latest"
+    "tldr@latest",
+    "starship@latest"
   ],
   "shell": {
     "init_hook": [],
